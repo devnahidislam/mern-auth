@@ -1,22 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const userAuth = require('../middleware/userAuth');
 
 const User = require('../models/userSchema');
-
-// Middleware
-const middleware = (req, res, next) => {
-  console.log(`user Auth checking`);
-  next();
-}
 
 router.get('/', (req, res) => {
   res.send("Congratulation! It's Express backend. From 5000")
 });
-router.get('/about', middleware, (req, res) => {
-  res.cookie("Nin", "Nin Cookies");
-  res.send("About Page")
+router.get('/about', userAuth, (req, res) => {
+  res.cookie("Nin", "It's First Nin Cookies");
+  // res.send("About Page");
+  res.send(req.rootUser);
+
 });
 router.get('/contact', (req, res) => {
   res.send("contact page")
@@ -32,7 +28,7 @@ router.post('/register', async (req, res) => {
     const userExist = await User.findOne({ email: email });
     
     if (userExist) {
-      return res.status(422).json({ error: "Email Already Exist." });
+      return res.status(422).json({ error: "Email Already Used." });
     } else if (password != confirmpwd) {
       return res.status(422).json({ error: "Password didn't match." });
     } else {

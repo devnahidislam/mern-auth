@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section{
+  background: #f8f9fa;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Home Page css start */
+.home_page{
   display: flex;
+  justify-content:center;
+  align-items:center;
   flex-direction: column;
+  height: 100vh;
+  background: rgb(202, 251, 255);
+  background-image: conic-gradient(rgb(202, 251, 255) 180deg, rgb(200, 202, 255) 180deg);
+}
+.home_page h2{
+  font-weight: bold;
+}
+/* Home Page css end */
+
+/* Login and Registration css start */
+.center-sec {
+  height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.center-form {
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.center-form .form{
+  padding: 20px 30px;
+}
+.center-form .form .title{
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+}
+.form .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  height:3px;
+  width:30px;
+  background:#4070f4;
+  border-radius: 10px;
+}
+.form .input-field{
+  margin-top:10px;
+  position: relative;
+  height:40px;
+  width:100%;
+}
+.input-field input{
+  position:absolute;
+  height:100%;
+  width:100%;
+  padding: 0 30px;
+  border:none;
+  outline:none;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+.input-field input:is(:focus, :active){
+  border-bottom-color: #4070f4;
+}
+.input-field .icon{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  color:#999;
+  font-size: 23px;
+}
+.input-field input:is(:focus, :active) ~ :not(.showHidePw){
+  color: #4070f4;
+}
+.input-field .icon{
+  left: 0;
+}
+.input-field .showHidePw{
+  position:absolute;
+  right: 0;
+  cursor: pointer;
+  padding: 2px;
+  border:none;
+  outline:none;
+  transition: all .3s ease;
+}
+.input-field .showHidePw:hover{
+  color: #4070f4;
 }
 
-.App-link {
-  color: #61dafb;
+.form .checkbox-text{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.checkbox-text .checkbox-content{
+  display: flex;
+  align-items: center;
+}
+.checkbox-content input{
+  margin: 0 8px 0 4px;
+  accent-color: #4070f4;
+}
+.form .text{
+  color: #333;
+  font-size: 14px;
+}
+.form a.text {
+  color: #4070f4;
+  margin-left: 5px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.form a:hover{
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form .button{
+  margin-top: 35px;
 }
+.button input {
+  border:none;
+  color: #fff;
+  background: #4070f4;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius:5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button input:hover{
+  background: #265df2;
+}
+.form .login-signup{
+  margin-top: 16px;
+  text-align: center;
+}
+/* Login and Registration css end */
+
+/* About page css start */
+.box_shadow{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.about_page{
+  border-radius: 10px;
+  background: #fff;
+}
+.about-image img{
+  /* width: 90%; */
+}
+tabs{
+
+}
+/* About page css end */
+
+/* Contact Form css start */
+.contact_form_cont{
+  border-radius: 10px;
+}
+.contact_form_input input{
+  padding: 0 5px;
+}
+.contact_form_inp_msg{
+  width: 100%;
+  padding:10px;
+}
+/* Contact Form css end */
+
+/* Error page css start */
+.error_page{
+  height: 90vh;
+  flex-direction: column;
+}
+/* Error page css end */
